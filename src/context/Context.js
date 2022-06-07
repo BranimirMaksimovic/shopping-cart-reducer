@@ -4,6 +4,7 @@ import { createContext } from "react";
 import { cartReducer } from "./Reducers";
 
 const Cart = createContext();
+faker.seed(99);
 
 const Context = ({ children }) => {
   const products = [...Array(20)].map(() => ({
@@ -13,7 +14,7 @@ const Context = ({ children }) => {
     image: faker.image.technics(640, 480, true),
     inStock: faker.helpers.arrayElement([2, 3, 4, 8, 9]),
     fastDelivery: faker.datatype.boolean(),
-    raings: faker.helpers.arrayElement([1, 2, 3, 4, 5]),
+    ratings: faker.helpers.arrayElement([1, 2, 3, 4, 5]),
   }));
 
   const [state, dispatch] = useReducer(cartReducer, {
