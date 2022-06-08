@@ -1,9 +1,8 @@
-import React from "react";
-import { Button, Card } from "react-bootstrap";
+import { Card, Button } from "react-bootstrap";
 import { CartState } from "../context/Context";
 import Rating from "./Rating";
 
-const SingleProducts = ({ prod }) => {
+const SingleProduct = ({ prod }) => {
   const {
     state: { cart },
     dispatch,
@@ -16,7 +15,7 @@ const SingleProducts = ({ prod }) => {
         <Card.Body>
           <Card.Title>{prod.name}</Card.Title>
           <Card.Subtitle style={{ paddingBottom: 10 }}>
-            <span>€ {prod.price.split(".")[0]}</span>
+            <span>₹ {prod.price.split(".")[0]}</span>
             {prod.fastDelivery ? (
               <div>Fast Delivery</div>
             ) : (
@@ -55,4 +54,4 @@ const SingleProducts = ({ prod }) => {
   );
 };
 
-export default SingleProducts;
+export default SingleProduct;
